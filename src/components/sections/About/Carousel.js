@@ -18,6 +18,8 @@ import img8 from "../../../assets/Nfts/bighead-7.svg"
 import img9 from "../../../assets/Nfts/bighead-8.svg"
 import img10 from "../../../assets/Nfts/bighead-9.svg"
 
+import Arrow from "../../../assets/Arrow.svg";
+
 const Container = styled.div`
 width: 25vw;
 height: 70vh;
@@ -35,8 +37,32 @@ height: 70vh;
     justify-content: center;
     align-items: center;
 }
+
+.swiper-button-next{
+    color: ${props => props.theme.text};
+    right: 0;
+    top: 60%
+    width: 4rem;
+
+    background-image: url(${Arrow});
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-button-prev{
+    color: ${props => props.theme.text};
+    left: 0;
+    top: 60%;
+    width: 4rem;
+    transform: rotate(180deg);
+
+    background-image: url(${Arrow});
+    background-position: center;
+    background-size: cover;
+}
 `
 
+// Let's get rid of the navigation arrows later
 const Carousel = () => {
     return (
         <Container>
@@ -48,8 +74,10 @@ const Carousel = () => {
                 pagination={{
                     type:'fraction',
                 }}
+                navigation={true}
                 effect={"cards"}
                 grabCursor={true}
+                scrollbar={{draggable:true}}
                 modules={[EffectCards, Pagination, Autoplay, Navigation]}
                 className="mySwiper"
             >
