@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Carousel from "./About/Carousel";
 import Button from "../Button";
+import { ThemeProvider } from "styled-components";
+import { dark } from "../../styles/Themes";
 
 const Section = styled.section`
     min-height: 100vh;
@@ -50,12 +52,18 @@ const SubText = styled.p`
 `
 
 const SubTextLight = styled.p`
-    font-size: ${(props) => props.theme.fontlg};
-    color: ${(props) => props.theme.body};
+    font-size: ${(props) => props.theme.fontmd};
+    color: ${(props) => props.theme.body}; 
     align-self: flex-start;
     width: 80%;
     margin: 1rem auto;
     font-weight: 400;
+`
+
+const ButtonContainer = styled.div`
+    width: 80%;
+    margin: 0 auto;
+    align-self: flex-start;
 `
 
 const About = () => {
@@ -71,9 +79,13 @@ const About = () => {
                         Star Sailors is a series of inter-connected minigames that will turn you into an astronaut with a real world impact!
                     </SubText>
                     <SubTextLight>
-                        Vehicles, tools, character traits and other items can be minted here to get you started on the Star Sailors chain.                        
+                        Vehicles, tools, character traits and other items can be minted here to get you started on the Star Sailors chain. They're stored on an ERC-721 contract, while we'll be integrating Solana and other major chains shortly.
                     </SubTextLight>
-                    <Button text="Join our Discor" link='#' />
+                    <ButtonContainer>
+                        <ThemeProvider theme={dark}>
+                            <Button text="Join our Discord" link='#' />
+                        </ThemeProvider>
+                    </ButtonContainer>
                 </Box>
             </Container>
         </Section>
