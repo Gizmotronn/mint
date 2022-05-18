@@ -1,7 +1,7 @@
 import { useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../lib/UserContext";
-import Loading from "./loading";
+import Loading from "../loading";
 
 const Profile = () => {
   const history = useHistory();
