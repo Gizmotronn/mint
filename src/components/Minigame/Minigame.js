@@ -1,7 +1,9 @@
 import Phaser from "Phaser";
-import styles from "./Styles/phaser-styles.css"
-// import Overworld from "./Phaser/Overworld.js"
-// import init from "./Phaser/init.js"
+import styles from "./Styles/phaser-styles.css";
+import Overworld from "./Overworld.js";
+import init from "./init.js";
+import Sprite from "./Sprite";
+import GameObject from "./GameObject";
 
 const Minigame = () => {
   return (
