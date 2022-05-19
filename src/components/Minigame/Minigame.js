@@ -13,6 +13,10 @@ const Minigame = () => {
       <div className='game-container'>
         <canvas className='game-canvas' width='352' height='198' />
       </div>
+      {/* Second compontent of the game -> copy data between each container */}
+      <div id="crafting-game-container">
+        <script type="module" src="./crafting/game.js"></script>
+      </div>
     </div>
   )
 }

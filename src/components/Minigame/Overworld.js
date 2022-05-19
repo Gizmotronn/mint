@@ -7,7 +7,18 @@ class Overworld {
         this.ctx = this.canvas.getContext("2d");
     }
 
+    startGameLoop() {
+        const step = () => { 
+            requestAnimationFrame(() => {
+                step();
+            })
+        }
+        step();
+    }
+
     init() {
+        this.startGameLoop();
+
         console.log("Hello (over)world", this)
 
         // Overworld/game background
@@ -34,7 +45,7 @@ class Overworld {
         setTimeout(() => {
             character.sprite.draw(this.ctx);  
             npc1.sprite.draw(this.ctx);
-        })
+        }) // Images need to download before they can be drawn to the map
     }
 }
 
