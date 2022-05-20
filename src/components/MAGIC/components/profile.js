@@ -12,7 +12,7 @@ const Profile = () => {
         user && !user.loading && !user.issuer && history.push("/login");
     }, [user, history]);
 
-    return (
+    return ( // Integrating discord into this...
         <>
             {user?.loading ? (
                 <Loading />

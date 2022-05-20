@@ -7,11 +7,13 @@ export default class MainScene extends Phaser.Scene {
 
     preload() {
         console.log("preload");
+        this.load.atlas('female','assets/images/female.png','assets/images/female_atales.json');
     }
 
     create() {
         console.log("create");
-        this.player = new Phaser.Physics.Matter.Sprite(this.matter.world);
+        this.player = new Phaser.Physics.Matter.Sprite(this.matter.world,0,0,'female','townsfolk_f_idle_1');
+        this.add.existing(this.player);
 
         // Player I/O device input for player movement
         this.inputKeys = this.input.keyboard.addKeys({
@@ -44,5 +46,8 @@ export default class MainScene extends Phaser.Scene {
         } else if (this.inputKeys.up.isDown) {
             playerVelocity.y = 1
         }
+        playerVelocity.normalize();
+        playerVelocity.scale(speed);
+        this.player.setVelocity(playerVelocity.x,playerVelocity.y);
     }
 }
