@@ -31,11 +31,15 @@ position: relative;
     border-radius: 50px;
     transition: all 0.2s ease;
 }
+
+
+`
+/* (insert below &::after{)
 &:hover::after{
     transform: translate(-50%, -50%) scale(1);
     padding: 0.3rem;
 }
-`
+*/
 
 const Button = ({ text, link }) => {
     return (

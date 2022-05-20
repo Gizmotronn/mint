@@ -1,8 +1,10 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import CoverVideo from '../CoverVideo';
-import TypeWriterText from '../TypeWriterText';
+import React, { lazy, Suspense } from 'react'
+import styled, { keyframes } from 'styled-components'
 import RoundTextBlack from '../../assets/Rounded-Text-Black.png';
+import Loading from '../Loading';
+
+const CoverVideo = lazy(() => import('../CoverVideo'));
+const TypeWriterText = lazy(() => import('../TypeWriterText'));
 
 const Section = styled.section`
 min-height: ${props => `calc(100vh - ${props.theme.navHeight})`   };
@@ -73,6 +75,8 @@ img{
 }
 `
 
+
+
 const Circle = styled.span`
 width: 3rem;
 height: 3rem;
@@ -101,10 +105,18 @@ font-size:${props => props.theme.fontlg};
 
 const Home = () => {
     return (
-        <Section>
+        <Section id="home">
             <Container>
-                <Box> <TypeWriterText /> </Box>
-                <Box><CoverVideo /></Box>
+                <Box>
+                  <Suspense fallback={<Loading />}>
+                    <TypeWriterText />
+                  </Suspense>
+                </Box>
+                <Box>
+                  <Suspense fallback={<Loading />}>
+                    <CoverVideo />
+                  </Suspense>
+                </Box>
 
                 <Round>
                     <Circle>

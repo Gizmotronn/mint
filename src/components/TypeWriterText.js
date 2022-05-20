@@ -101,9 +101,9 @@ const TypeWriterText = () => {
             />
         </Title>
         <SubTitle>More than an investment, Star Sailors is an adventure </SubTitle>
-        <ButtonContainer>
-            <Button text="Explore" link="#home" />
-        </ButtonContainer>
+        <a href="https://docs.skinetics.tech"><ButtonContainer>
+            <Button text="Read the docs" link="https://docs.skinetics.tech" />
+        </ButtonContainer></a>
     </>
     )
 }

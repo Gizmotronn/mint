@@ -142,15 +142,15 @@ const Team = () => {
     <ConfettiComponent  /> </Suspense>
       <Title>Team</Title>
       <Container>
-        <MemberComponent img={img1}  name="Liam" position="Founder" />
-        <MemberComponent img={img2}  name="Test" position="Co-Founder" />
-        <MemberComponent img={img3}  name="Test" position="Director" />
-        <MemberComponent img={img4}  name="Test" position="manager" />
-        <MemberComponent img={img5}  name="Test" position="artist" />
-        <MemberComponent img={img6}  name="Test" position="social media manager" />
-        <MemberComponent img={img7}  name="Test" position="Blockchain Specialist" />
-        <MemberComponent img={img8}  name="Test" position="Web3 Developer" />
-        <MemberComponent img={img9}  name="Test" position="Graphic Designer" />
+        <MemberComponent img={img1}  name="Liam" position="Founder & Lead Engineer" />
+        <MemberComponent img={img2}  name="Arthur" position="Design Lead" />
+        <MemberComponent img={img3}  name="Nathan" position="Game Design" />
+        <MemberComponent img={img4}  name="Chris" position="Game Design" />
+        <MemberComponent img={img5}  name="Andre" position="Game Design" />
+        <MemberComponent img={img6}  name="Samuel" position="Game Art" />
+        <MemberComponent img={img7}  name="Dylan" position="Devops " />
+        <MemberComponent img={img8}  name="Tim" position="Advisor & Mentor" />
+        <MemberComponent img={img9}  name="Dan" position="Advisor & CEO" />
         
 
       </Container>
