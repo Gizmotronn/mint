@@ -150,7 +150,7 @@ const Banner = () => {
         <Title>Become an  <br />  astronaut  </Title>
         <BtnContainer>
 
-        <a href='https://docs.skinetics.tech' aria-label='discord link' target="_blank" rel="noreferrer" >
+        <a href='https://signal-k.slack.com/join/shared_invite/zt-10uczje7a-ZWH_kXfjCBuicgaOBNePcg' aria-label='discord link' target="_blank" rel="noreferrer" >
         <JoiNow>
             Join Now
         </JoiNow>

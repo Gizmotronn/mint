@@ -23,7 +23,7 @@ function App() {
           <About />
           <Roadmap />
           {/*<Showcase /> --> Add when we have nft images*/}
-          <Team />
+          {/*<Team /> */}
           {/*<Faq /> --> Add once we've discussed this with the team */}
           <Footer />
           {/* <ScrollToTop scrollPosition={y}/> */}

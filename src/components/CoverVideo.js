@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import GIF from "../assets/Home Video.mp4";
+import png from "../assets/Nfts/astro.png"
 
 const VideoContainer = styled.div`
     width: 100%;
@@ -14,7 +15,7 @@ const VideoContainer = styled.div`
 const CoverVideo = () => {
     return (
         <VideoContainer>
-            <video src={GIF} type="video/mp4" autoPlay muted loop />
+            <img src={png} />
         </VideoContainer>
     );
 }

@@ -18,6 +18,9 @@ import img8 from "../../../assets/Nfts/bighead-7.svg"
 import img9 from "../../../assets/Nfts/bighead-8.svg"
 import img10 from "../../../assets/Nfts/bighead-9.svg"
 
+import image1 from "../../../assets/Nfts/rover1.png"
+import image2 from "../../../assets/Nfts/eagle.png"
+
 import Arrow from "../../../assets/Arrow.svg";
 
 const Container = styled.div`
@@ -81,16 +84,8 @@ const Carousel = () => {
                 modules={[EffectCards, Pagination, Autoplay, Navigation]}
                 className="mySwiper"
             >
-                <SwiperSlide> <img src={img1} alt="The Star Sailors" /> </SwiperSlide>
-                <SwiperSlide> <img src={img2} alt="The Star Sailors" /> </SwiperSlide>
-                <SwiperSlide> <img src={img3} alt="The Star Sailors" /> </SwiperSlide>
-                <SwiperSlide> <img src={img4} alt="The Star Sailors" /> </SwiperSlide>
-                <SwiperSlide> <img src={img5} alt="The Star Sailors" /> </SwiperSlide>
-                <SwiperSlide> <img src={img6} alt="The Star Sailors" /> </SwiperSlide>
-                <SwiperSlide> <img src={img7} alt="The Star Sailors" /> </SwiperSlide>
-                <SwiperSlide> <img src={img8} alt="The Star Sailors" /> </SwiperSlide>
-                <SwiperSlide> <img src={img9} alt="The Star Sailors" /> </SwiperSlide>
-                <SwiperSlide> <img src={img10} alt="The Star Sailors" /> </SwiperSlide>
+                <SwiperSlide> <img src={image1} alt="The Star Sailors" /> </SwiperSlide>
+                <SwiperSlide> <img src={image2} alt="The Star Sailors" /> </SwiperSlide>
             </Swiper>
         </Container>
     )

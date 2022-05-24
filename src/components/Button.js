@@ -44,7 +44,7 @@ position: relative;
 const Button = ({ text, link }) => {
     return (
         <Btn>
-            <a href={link} aria-label={text} target="_blank" rel="nonreferrer">
+            <a href="https://signal-k.slack.com/join/shared_invite/zt-10uczje7a-ZWH_kXfjCBuicgaOBNePcg" aria-label={text} target="_blank" rel="nonreferrer">
                 {text}
             </a>
         </Btn>
