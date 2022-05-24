@@ -1,5 +1,9 @@
 import { createContext } from "react";
 import GameObject from "./GameObject";
+import utils from "./utils";
+
+import png from "./images/characters/player"; // Set this to be the player's unique NFT (based on the nft collection, like in Phaser)
+import Person from "./Person";
 
 class OverworldMap {
     constructor(config) {
@@ -23,14 +27,14 @@ window.OverworldMaps = { // Configuration for every map in the game
         lowerSrc: "/images/maps/DemoLower.png",
         upperSrc: "/images/maps/DemoUpper.png",
         gameObjects: {
-            character: new GameObject({
-                x: 5,
-                y: 6,
+            character: new Person({
+                x: utils.withGrid(5),
+                y: utils.withGrid(6),
             }),
             npc1: new GameObject({
-                x: 7,
-                y: 9,
-                src: '/images/characters/npc1.png'
+                x: utils.withGrid(7),
+                y: utils.withGrid(9),
+                src: '/images/characters/npc1.png',
             }),
         }
     },

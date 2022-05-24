@@ -34,8 +34,8 @@ class Sprite {
     }
 
     draw(ctx) {
-        const x = this.gameObject.x * 16 - 8; // Set this value for the sprite to be equal to the specific game object's position
-        const y = this.gameObject.y * 16 - 18;
+        const x = this.gameObject.x - 8; // Set this value for the sprite to be equal to the specific game object's position
+        const y = this.gameObject.y - 18;
 
         // Draw the shadow first
         this.isShadowLoaded && ctx.drawImage(this.shadow, x, y);
