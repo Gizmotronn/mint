@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
+import { Box, Button, Flex, Image, Link, Spacer } from "@chakra-ui/react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import { UserContext } from "./lib/UserContext";
 import { LifetimeContext } from "./lib/LifetimeContext";
@@ -16,8 +17,8 @@ import Layout from "./components/layout";
 
 // Magic/stripe
 import { magic } from "./lib/magic";
-import { loadStripe } from "@stripe/stripe-js"
-import { ELements } from "@stripe/react-stripe-js"
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
 const promise = loadStripe(process.env.REACT_APP_STRIPE_PK_KEY);
 

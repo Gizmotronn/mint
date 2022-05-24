@@ -1,4 +1,5 @@
 import GameObject from "./GameObject";
+import OverworldMap from "./OverworldMap";
 
 class Overworld {
     constructor(config) {
@@ -7,34 +8,36 @@ class Overworld {
         this.ctx = this.canvas.getContext("2d");
     }
 
+    startGameLoop() {
+        const step = () => { 
+            // Clean the canvas each frame 
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+            // Draw layers for map
+            // Draw lower layer
+            this.map.drawLowerImage(this.ctx);
+
+            // Draw Game Objects
+            Object.values(this.map.gameObjects).forEach(object => {
+                object.update({
+                    
+                })
+                object.sprite.draw(this.ctx);
+            })
+
+            // Draw upper layer
+            this.map.drawUpperImage(this.ctx);
+
+            requestAnimationFrame(() => {
+                step();
+            })
+        }
+        step();
+    }
+
     init() {
-        console.log("Hello (over)world", this)
-
-        // Overworld/game background
-        const image = new Image(); // Load the image to the canvas memory so that pixel generation can be created based on the image (e.g. drawing a room in pixels based on an image inserted [here] into memory)
-        image.onload = () => {
-            this.ctx.drawImage(image,0,0)
-        };
-        image.src = "/images/maps/DemoMap.png"; // Still need to get this assets -> take from github/signal-k/marketplace (Phaser)    
-        
-        // Place some game objects
-        const character = new GameObject({
-            x: 5,
-            y: 6,
-            src: "/",
-        })
-        
-        const npc1 = new GameObject({
-            x: 7,
-            y: 9,
-            src: "/images/characters/npc1"
-        })
-
-        // Draw the sprites of configured game objects
-        setTimeout(() => {
-            character.sprite.draw(this.ctx);  
-            npc1.sprite.draw(this.ctx);
-        })
+        this.map = new OverworldMap(window.OverworldMaps.DemoRoom) // The game loads with this map
+        this.startGameLoop();
     }
 }
 
