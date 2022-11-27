@@ -3,6 +3,7 @@ import { ethers, BigNumber } from 'ethers';
 import roboPunksNFT from '../RoboPunksNFT.json'; // Grab the ABI from the contract
 import WristbandNFT from '../WristbandNFT.json';
 import { Box, Button, Flex, Input, Text } from "@chakra-ui/react";
+import Coin from "../assets/coin.png";
 
 const roboPunksNFTAddress = "0xA0Ba4E895447770cBf0ff998d3DBa0a08496CE90";
 //const roboPunksNFTAddress = "0xd4F18cF04B9C74d5B69775BBfFbf433Ff24D8dbC";
@@ -43,18 +44,25 @@ const MainMint = ({ accounts, setAccounts }) => {
     };
 
     return (
-        <Flex justify="center" align="center" height="100vh" paddingBottom="150px">
+        <Flex justify="center" align="center" height="100vh" paddingBottom="350px">
             <Box width="520px">
+                <img src={Coin} width="35%" height="35%" />
                 <div>
-                    <Text fontSize="48px" textShadow="0 5px #000000">Star Sailors</Text>
+                    <Text fontSize="100px"></Text>
                     <Text
-                        fontSize="30px"
+                        fontSize="45px"
                         letterSpacing="-5.5%"
-                        fontFamily="VT323"
-                        textShadow="0 2px 2px #000000"
-                    >
-                        Preorder Star Sailors characters, items and components here
-                    </Text>
+                        fontFamily="PT Sans Bold"
+                    > 
+                        $RIPH Staking
+                    </Text> 
+                    <Text
+                        fontSize="75px"
+                        letterSpacing="-5.5%"
+                        fontFamily="PT Sans"
+                    > 
+                        LAUNCHING SOON
+                    </Text> {/* Stake your $RIPH tokens here */}
                 </div>
 
                 {isConnected ? (
@@ -99,17 +107,16 @@ const MainMint = ({ accounts, setAccounts }) => {
                             fontFamily="inherit"
                             padding="15px"
                             marginTop="10px"
-                        onClick={handleMint}>Mint now</Button>
+                        onClick={handleMint}>COMING SOON</Button> {/* Stake now */}
                     </div>
                 ) : ( // If not connected
                     <Text
                         marginTop="70px"
                         fontSize="30px"
                         letterSpacing="-5.5%"
-                        fontFamily="VT323"
-                        textShadow="0 3px #000000"
-                        color="#d6517D"
-                    >You must be connected to mint</Text>
+                        fontFamily="PT Sans"
+                        color="#c53535"
+                    ></Text> // {/* You must be connected to stake */}
                 )}
             </Box>
         </Flex>

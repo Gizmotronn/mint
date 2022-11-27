@@ -6,6 +6,7 @@ import Email from "../assets/social-media-icons/email_32x32.png";
 import Github from "../assets/social-media-icons/github.png";
 import Documentation from "../assets/social-media-icons/documentation.png";
 import Keybase from "../assets/social-media-icons/keybase.png";
+import ClickButton from "./common/ClickButton/ClickButton";
 
 const NavBar = ({ accounts, setAccounts }) => {
     const isConnected = Boolean(accounts[0]); // Address of wallet that is connected
@@ -23,37 +24,16 @@ const NavBar = ({ accounts, setAccounts }) => {
     return (
         <Flex justify="space-between" align="center" padding="30px">
             {/*Left side of navbar */}
-            <Flex justify="space-around" width="40%" padding="0 75px">
-                <Link href="keybase://chat/signalkinetics#general/41">
-                    <Image src={Keybase} boxSize="42px" margin="0 15px" />
-                </Link>
-                <Link href="https://docs.skinetics.tech/whitepaper" target="_blank">
-                    <Image src={Documentation} boxSize="42px" margin="0 15px" />
-                </Link>
-                <Link href="https://github.com/signal-k" target="_blank">
-                    <Image src={Github} boxSize="42px" margin="0 15px" />
-                </Link>
-            </Flex> {/*Github, Dribbble, Deviantart??? Opensea*/}
-            
-            {/* Right side of navbar */}
             <Flex
                 justify="space-around"
                 align="center"
                 width="40%"
                 padding="30px 30px 30px 30px"
             >
-                <Link style={{ textDecoration: 'none' }} color="#ffffff" href="mailto:liam@skinetics.tech" target="_blank">
-                    <Box margin="0 15px">Contact</Box>
-                </Link>
-                <Spacer />
-
-                <Link style={{ textDecoration: 'none' }} color="#ffffff" href="https://docs.skinetics.tech/whitepaper" target="_blank">
-                    <Box margin="0 15px">Whitepaper</Box>
-                </Link>
-                <Spacer />
+                
                  
 
-                {/* Connected */} {/* If connected, add Memberstack login for docs */}
+                {/* Connected  {/* If connected, add Memberstack login for docs 
                 {isConnected ? ( // Insert custom links for team members if logged in with the correct tokens
                 <Flex
                     justify="space-around"
@@ -62,7 +42,7 @@ const NavBar = ({ accounts, setAccounts }) => {
                     padding="30px 30px 30px 30px"
                 >
                     <Link style={{ textDecoration: 'none' }} color="#ffffff" href="https://dao.emulsion.space" target="_blank">
-                        <Box margin="0 15px">Enter the DAO</Box>
+                        <Box margin="0 15px">Stake</Box>
                     </Link>
                     <Spacer />
 
@@ -72,20 +52,49 @@ const NavBar = ({ accounts, setAccounts }) => {
                     
                     /*<Link href="">
                     
-    </Link>*/
+    </Link>
                 ) : (
                     <Button
-                        backgroundColor="#D6517D"
-                        borderRadius="5px"
-                        boxShadow="0px 2px 2px 1px #0F0F0F"
+                        backgroundColor="#c53535"
+                        borderRadius="15px"
                         color="white"
                         cursor="pointer"
                         fontFamily="inherit" 
                         padding="15px"
                         margin="0 15px"
-                    onClick={connectAccount}>Connect</Button>
+                    onClick={() => { window.location.href = 'http://localhost:3000'}}>Connect</Button>
                 )}
             </Flex>
+            <Flex justify="space-around" width="40%" padding="0 75px">
+                {/*<Link href="https://docs.skinetics.tech/whitepaper" target="_blank">
+                    <Image src={Documentation} boxSize="42px" margin="0 15px" />
+                </Link>
+                <Link href="https://github.com/signal-k" target="_blank">
+                    <Image src={Github} boxSize="42px" margin="0 15px" />
+    </Link>*/}
+            </Flex> {/*Github, Dribbble, Deviantart??? Opensea*/}
+            {/*<ClickButton>Connect</ClickButton>
+            
+            {/* Right side of navbar 
+            <center>
+                <Flex
+                    justify="space-around"
+                    align="center"
+                    width="60%"
+                    padding="30px 30px 30px 30px"
+                >
+                <Link style={{ textDecoration: 'none' }} color="#ffffff" href="mailto:liam@skinetics.tech" target="_blank">
+                        <Box margin="0 15px">Main site</Box>
+                    </Link>
+                    <Spacer />
+
+                    <Link style={{ textDecoration: 'none' }} color="#ffffff" href="https://docs.skinetics.tech/whitepaper" target="_blank">
+                        <Box margin="0 15px">Whitepaper</Box>
+                    </Link>
+                    <Spacer />
+                </Flex>
+</center>*/}
+            
         </Flex>
     )
 }
